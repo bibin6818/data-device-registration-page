@@ -1,0 +1,121 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container styles */
+.login-container {
+    width: 360px;
+    padding: 30px;
+    background-color: #71cad0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 150px auto;
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 24px;
+    color: #343a40;
+}
+
+/* Input group styles */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.error {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 5px;
+}
+
+/* Button styles */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.forgot-btn {
+    background-color: #007bff;
+}
+
+.forgot-btn:hover {
+    background-color: #0056b3;
+}
+
+.forgot-btn:active {
+    transform: scale(0.98);
+}
+
+
+.register-btn {
+    background-color: #000000;
+}
+
+.register-btn:hover {
+    background-color: #000000;
+}
+
+.register-btn:active {
+    transform: scale(0.98);
+}

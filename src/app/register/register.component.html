@@ -1,0 +1,73 @@
+<!-- registration-form.component.html -->
+<form>
+    <div class="form-container">
+      <div class="user-details">
+        <h2>User Details</h2>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+          </div>
+          <div>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+          </div>
+          <div>
+            <input type="radio" id="other" name="gender" value="other" required>
+            <label for="other">Other</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+            <option value="australia">Australia</option>
+            <!-- Add more countries as needed -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+      <div class="account-details">
+        <h2>Account Details</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I accept the terms and conditions</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="button">List</button>
+    <button type="button">Clear</button>
+  </form>
+  
