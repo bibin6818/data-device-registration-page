@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-off: any;
+  off: any;
 
   onSubmit() {
     if (this.email && this.password) {

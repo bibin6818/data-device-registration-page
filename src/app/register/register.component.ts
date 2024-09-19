@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+fname:string="";
+dobdate:string="";
+username:string="";
+email: string = '';
+password: string = '';
+cmpassword: string = '';
+bio:string='';
+
+
 }
+
+

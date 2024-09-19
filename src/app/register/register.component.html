@@ -1,73 +1,213 @@
-<!-- registration-form.component.html -->
-<form>
-    <div class="form-container">
-      <div class="user-details">
-        <h2>User Details</h2>
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" required>
+<form action="">
+<div class="row mx-5 mt-5">
+  <!-- photo and details -->
+
+  <div class="col-md-2  mt-5">
+    <img
+      src="https://th.bing.com/th/id/R.e219163d793736fb056e80d5922a7f82?rik=m1mBctCAx6eXHQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fbusinessman-at-desk-png-businessman-working-in-his-desk-1-02-png-1198.png&ehk=tlG4ljpkbELt3Ww%2bR2fH8vcq7RkWyOHJ8HmOz4DAHu0%3d&risl=&pid=ImgRaw&r=0"
+      width="100px" alt="">
+    <h4>Human Being</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur beatae accusantium earum eveniet hic
+      similique dolore autem quo fuga necessitatibus?</p>
+  </div>
+  <div class="col-md-5 mt-5">
+    <h3><b>User Details</b></h3>
+    <div>
+
+      <!-- name -->
+
+      <div>
+        <label for="" class="text-secondary">Full name*</label>
+        <div class="example-form">
+          <mat-form-field class="example-full-width">
+
+            <input [(ngModel)]=" fname" name="fname" #fullname="ngModel" required pattern="[a-z A-Z]*" type="text"  class="text-secondary" matInput placeholder="Ex:John" value="">
+          </mat-form-field>
         </div>
-        <div class="form-group">
-          <label for="dob">Date of Birth</label>
-          <input type="date" id="dob" name="dob" required>
+        <div *ngIf="fullname.touched && fullname.invalid">
+        <span class="text-danger" *ngIf="fullname.errors?.['required']" >Enter Full Name</span>
+        <span class="text-danger" *ngIf="fullname.errors?.['pattern']" > Type in Letters</span>
+      </div>
+      </div>
+
+      <!-- date of birth -->
+
+      <div>
+        <label for="" class="text-secondary">Your Birthday*</label>
+
+        <div class="flex-column">
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input [(ngModel)]="dobdate" name="dobdate" #dateofbirth="ngModel" required  title="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </div>
-        <div class="form-group">
-          <label>Gender</label>
-          <div>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label>
-          </div>
-          <div>
-            <input type="radio" id="female" name="gender" value="female" required>
-            <label for="female">Female</label>
-          </div>
-          <div>
-            <input type="radio" id="other" name="gender" value="other" required>
-            <label for="other">Other</label>
-          </div>
+        <div *ngIf="dateofbirth.touched && dateofbirth.invalid">
+          <span class="text-danger" *ngIf="dateofbirth.errors?.['required']">Select your Date Of birth</span>
         </div>
-        <div class="form-group">
-          <label for="country">Country</label>
-          <select id="country" name="country" required>
-            <option value="india">India</option>
-            <option value="usa">USA</option>
-            <option value="uk">UK</option>
-            <option value="canada">Canada</option>
-            <option value="australia">Australia</option>
-            <!-- Add more countries as needed -->
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required>
+
+      </div>
+
+      <!-- gender -->
+
+      <div>
+        <label for="" class="text-secondary">Gender*</label>
+        <div class="flex-column">
+          <mat-radio-group aria-label="Select an option" >
+            <mat-radio-button value="1">Male <i class="fa-solid fa-mars"></i></mat-radio-button>
+            <mat-radio-button id="radio" value="2">Female <i class="fa-solid fa-venus"></i></mat-radio-button>
+            <mat-radio-button id="radio" value="2"> Others <i class="fa-solid fa-transgender"></i></mat-radio-button>
+          </mat-radio-group>
         </div>
       </div>
-      <div class="account-details">
-        <h2>Account Details</h2>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required>
+
+      <!-- phone and country -->
+
+      <div class="row mt-3">
+        <div class="col-md">
+          <label for="" class="text-secondary flex-row ">Country</label>
+          <div style="flex-column mt-3">
+            <mat-form-field>
+              <select matNativeControl required>
+                <option value="">--Select--</option>
+                <option value="india">India</option>
+                <option value="united-states">United States</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="germany">Germany</option>
+                <option value="france">France</option>
+                <option value="japan">Japan</option>
+                <option value="brazil">Brazil</option>
+                <option value="south-africa">South Africa</option>
+                <option value="china">China</option>
+                <option value="russia">Russia</option>
+                <option value="mexico">Mexico</option>
+                <option value="italy">Italy</option>
+                <option value="spain">Spain</option>
+                <option value="south-korea">South Korea</option>
+                <option value="argentina">Argentina</option>
+                <option value="netherlands">Netherlands</option>
+                <option value="sweden">Sweden</option>
+                <option value="new-zealand">New Zealand</option>
+                <option value="switzerland">Switzerland</option>
+              </select>
+            </mat-form-field>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
+
+        <div class="col-md">
+          <div> <label for="" class="text-secondary ">Phone</label>
+          </div>
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+
+              <input class="text-secondary" matInput placeholder="Ex:123456789" value="">
+            </mat-form-field>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
+      </div>
+
+      <!-- bio -->
+
+   <div>
+        <div> <label for="" class="text-secondary ">Bio</label>
         </div>
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" required>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="terms" name="terms" required>
-          <label for="terms">I accept the terms and conditions</label>
-        </div>
+        <form class="example-form mt-3">
+          <mat-form-field class="example-full-width">
+  
+            <input class="text-secondary" matInput placeholder="Tell us about yourself" value=""  name="bio" [(ngModel)]="bio" #bioInput="ngModel" required minlength="20">
+          </mat-form-field>
+        </form>
+  
+   </div>
+   <div class="error" *ngIf="bioInput.invalid && bioInput.touched">
+    <span class="text-danger" *ngIf="bioInput.errors?.['required']">bio is required.</span>
+    <span class="text-danger" *ngIf="bioInput.errors?.['minlength']">bio must be at least 20 characters.</span>
+  </div>
+
+
+   <!-- submit and list button -->
+
+<div>
+  <button class="btn btn-outline-success mx-4">Submit</button>
+  
+  <button class="btn btn-outline-primary"> List </button>
+  
+</div>
+    </div>
+  </div>
+  <div class="col-md-5 mt-5">
+    <h3><b>Account Details</b></h3>
+
+    <!-- Username -->
+    
+    <div>
+      <label for="" class="text-secondary">Username *</label>
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+
+          <input [(ngModel)]="username" name="username" #uname="ngModel" required pattern="[a-zA-Z@_0-9]*" class="text-secondary" matInput placeholder="Ex:John@123" value="">
+        </mat-form-field>
+      </div>
+      <div *ngIf="uname.invalid && uname.touched">
+        <span class="text-danger" *ngIf="uname.errors?.['required']">
+          Please Fill the form
+        </span>
+        <span class="text-danger" *ngIf="uname.errors?.['pattern']"> Use these kind of characters a-zA-Z0-9@_$#</span>
       </div>
     </div>
-    <button type="submit">Submit</button>
-    <button type="button">List</button>
-    <button type="button">Clear</button>
-  </form>
+
+    <!-- Email -->
+
+    
+    <div>
+      <label for="" class="text-secondary">Email*</label>
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+
+          <input name="email" [(ngModel)]="email" #emailInput="ngModel" required email class="text-secondary" matInput placeholder="Ex:john@gmail.com" value="" autocomplete="off">
+        </mat-form-field>
+      </div>
+      <div class="error" *ngIf="emailInput.invalid && emailInput.touched">
+        <span class="text-danger" *ngIf="emailInput.errors?.['required']">Email is required.</span>
+        <span class="text-danger" *ngIf="emailInput.errors?.['email']">Please enter a valid email.</span>
+      </div>
+    </div>
+
+    <!-- Password -->
+
+    <div>
+      <label for="" class="text-secondary">Password*</label>
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+
+          <input type="password" class="text-secondary" matInput placeholder="Password" value=""  name="password" [(ngModel)]="password" #passwordInput="ngModel" required minlength="6">
+        </mat-form-field>
+      </div>
+      <div class="error" *ngIf="passwordInput.invalid && passwordInput.touched">
+        <span class="text-danger" *ngIf="passwordInput.errors?.['required']">Password is required.</span>
+        <span class="text-danger" *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters.</span>
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div>
+      <label for="" class="text-secondary">Confirm Password*</label>
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+
+          <input type="password" class="text-secondary" matInput placeholder="Password" value="">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin">Accept Terms and Conditions</mat-checkbox>
+    </section>
+
+  </div>
   
+
+</div>
+</form>
