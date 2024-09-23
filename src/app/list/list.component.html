@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center" *ngIf="formData">
+<div class="d-flex justify-content-center" *ngIf="formDataArray">
     
     <table class="table table-bordered table-hover shadow p-3 w-50 mt-5 ">
         <thead class="thead-dark">
@@ -12,8 +12,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
+          <tr *ngFor="let formData of formDataArray;let i = index">
+            <th scope="row">{{i+1}}</th>
             <td>{{formData.fname}}</td>
             <td>{{formData.email}}</td>
             <td>{{formData.gender}}</td>

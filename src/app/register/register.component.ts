@@ -20,9 +20,14 @@ export class RegisterComponent implements OnInit {
     });
 
   }
+  formData:any;
+
   ngOnInit(): void {
+    this.formData = this.listService.getFormData();
 
   }
+
+
 
   fname: string = "";
   dobdate: string = "";
@@ -38,6 +43,7 @@ export class RegisterComponent implements OnInit {
     alert('Page Cleared Sucessfully')
   }
 
+  formDataArray: any[] = [];
 
   submitform() {
     if (this.fname &&
@@ -54,10 +60,10 @@ export class RegisterComponent implements OnInit {
         gender: this.gender,
         phone: this.phone,
       };
-
-      this.listService.setFormData(formData);
-      // this.router.navigate(['/list']);
-      alert("Form Submitted Successfully")
+       this.formDataArray.push(formData);
+       this.listService.setFormData(formData);
+      // this.listService.setFormData(formData);
+      // alert("Form Submitted Successfully")
 
     } else {
       alert("Enter a valid form")
